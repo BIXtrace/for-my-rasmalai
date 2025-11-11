@@ -1,49 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background: radial-gradient(circle at center, #0a0a2a, #000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  color: #e8f0ff;
+  background: radial-gradient(circle at center, #000428, #004e92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.message {
-    position: absolute;
-    text-align: center;
-    z-index: 10;
-    color: #cce6ff;
-    text-shadow: 0 0 20px rgba(0, 100, 255, 0.6);
-    animation: fadeIn 3s ease-in-out;
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
-.message h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+.content {
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 3s ease;
 }
 
-.message p {
-    font-size: 1.2em;
-    color: #aaccff;
-    font-style: italic;
+h1 {
+  font-size: 3.5rem;
+  color: #aad4ff;
+  text-shadow: 0 0 25px #00bfff;
 }
 
-#heartsCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+p {
+  font-size: 1.3rem;
+  color: #cce6ff;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.float-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 100, 255, 0.7);
+  animation: float 6s ease-in-out infinite;
+}
+
+.left {
+  animation-delay: 0s;
+}
+
+.right {
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00bfff, #0077ff);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #66ccff, #0099ff);
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.8);
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 10px;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
 }
