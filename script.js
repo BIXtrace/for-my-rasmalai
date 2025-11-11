@@ -105,3 +105,8 @@ playBtn.addEventListener('click', () => {
   }
   isPlaying = !isPlaying;
 });
+
+document.getElementById('letterBtn').addEventListener('click', () => {
+  window.location.href = "letter.html";
+});
+
