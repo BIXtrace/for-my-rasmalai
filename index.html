@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Last Goodbye</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Last Goodbye</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="message">
-        <h1>The last goodbye</h1>
-        <p>Because your ego is far bigger than our relationship.</p>
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="content">
+    <h1>The Last Goodbye</h1>
+    <p>Because your ego is far bigger than our relationship.</p>
+
+    <div class="images">
+      <img src="images/pic1.png" alt="Memory 1" class="float-img left" />
+      <img src="images/pic2.png" alt="Memory 2" class="float-img right" />
     </div>
 
-    <canvas id="heartsCanvas"></canvas>
-    
-    <script src="script.js"></script>
+    <div class="controls">
+      <button id="playBtn">🎵 Play / Pause</button>
+      <p class="hint">(You can replace <code>song.mp3</code> in the folder)</p>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
